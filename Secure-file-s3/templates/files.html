@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available Files</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        .container {
+            background: #fff;
+            max-width: 500px;
+            margin: 60px auto;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(44, 62, 80, 0.15);
+            padding: 40px 30px 30px 30px;
+        }
+        h2 {
+            text-align: center;
+            color: #2d3a4b;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #f5f8fa;
+            margin-bottom: 15px;
+            padding: 15px 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(44, 62, 80, 0.05);
+        }
+        li:last-child {
+            margin-bottom: 0;
+        }
+        a.download-btn {
+            background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+        }
+        a.download-btn:hover {
+            background: linear-gradient(90deg, #185a9d 0%, #43cea2 100%);
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            color: #185a9d;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: color 0.2s;
+        }
+        .back-link:hover {
+            color: #43cea2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Files in S3</h2>
+        <ul>
+            {% for file in files %}
+                <li>
+                    <span>{{ file.Key }}</span>
+                    <a class="download-btn" href="/download/{{ file.Key }}">Download</a>
+                </li>
+            {% else %}
+                <li>No files found.</li>
+            {% endfor %}
+        </ul>
+        <a class="back-link" href="/">&#8592; Back</a>
+    </div>
+</body>
+</html>

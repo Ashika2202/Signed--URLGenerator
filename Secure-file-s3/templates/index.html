@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Secure Document Sharing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #e0e7ff 0%, #f4f8fb 100%);
+            font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 420px;
+            margin: 80px auto;
+            background: rgba(255,255,255,0.95);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(37,99,235,0.13), 0 1.5px 8px rgba(0,0,0,0.06);
+            padding: 48px 36px 36px 36px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .container::before {
+            content: "";
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 160px;
+            height: 160px;
+            background: linear-gradient(135deg, #2563eb 60%, #60a5fa 100%);
+            opacity: 0.13;
+            border-radius: 50%;
+            z-index: 0;
+        }
+        h1 {
+            color: #1e293b;
+            margin-bottom: 28px;
+            font-size: 2.2rem;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            z-index: 1;
+            position: relative;
+        }
+        .subtitle {
+            color: #64748b;
+            font-size: 1.08rem;
+            margin-bottom: 32px;
+            z-index: 1;
+            position: relative;
+        }
+        .actions {
+            margin-top: 28px;
+            z-index: 1;
+            position: relative;
+        }
+        .actions a {
+            display: inline-block;
+            margin: 0 14px;
+            padding: 14px 34px;
+            background: linear-gradient(90deg, #2563eb 60%, #60a5fa 100%);
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.08rem;
+            transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+            box-shadow: 0 2px 12px rgba(37,99,235,0.12);
+            border: none;
+            outline: none;
+        }
+        .actions a:hover {
+            background: linear-gradient(90deg, #1e40af 60%, #2563eb 100%);
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 6px 24px rgba(37,99,235,0.18);
+        }
+        .icon {
+            font-size: 2.7rem;
+            color: #2563eb;
+            margin-bottom: 18px;
+            z-index: 1;
+            position: relative;
+            animation: float 2.5s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0);}
+            50% { transform: translateY(-10px);}
+        }
+        @media (max-width: 500px) {
+            .container {
+                max-width: 95vw;
+                padding: 32px 10px 24px 10px;
+            }
+            h1 {
+                font-size: 1.3rem;
+            }
+            .actions a {
+                padding: 12px 18px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">🔒</div>
+        <h1>Welcome to Secure Document Sharing</h1>
+        <div class="subtitle">Safely upload and access your files in the cloud.</div>
+        <div class="actions">
+            <a href="/upload">Upload File</a>
+            <a href="/files">View Files</a>
+        </div>
+    </div>
+</body>
+</html>
